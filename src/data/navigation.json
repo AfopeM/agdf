@@ -1,0 +1,10 @@
+{
+  "nav": ["Home", "About", "Contact Us"],
+  "footer": {
+    "copyright": "©2021 African Green Growth and Development Forum (AGDF). All rights reserved.",
+    "contact": {
+      "email": "info@agdf.eco",
+      "location": "Faculty of Environmental Sciences, University of Calabar, Calabar Etagbor, PMB 1115 Calabar, Nigeria"
+    }
+  }
+}
