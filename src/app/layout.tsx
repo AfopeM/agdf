@@ -1,5 +1,6 @@
 import "../styles/globals.css";
 import type { Metadata } from "next";
+import NavBar from "@/components/NavBar";
 
 export const metadata: Metadata = {
   title: "AGDF - African Green Growth & Development Forum",
@@ -14,7 +15,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`font-pop antialiased`}>{children}</body>
+      <body className={`font-pop antialiased`}>
+        <NavBar />
+        {children}
+      </body>
     </html>
   );
 }
