@@ -37,8 +37,12 @@ export default function NavBar() {
   return (
     <nav
       aria-label="Main Navigation"
-      className={`bg-brand top-0 z-40 flex w-full items-center justify-center transition-all duration-300 ${
-        isLgScreen ? "h-24" : isScrolled ? "sticky h-20" : "h-24"
+      className={`absolute top-0 z-40 flex w-full items-center justify-center transition-all duration-300 ${
+        isLgScreen
+          ? "h-24"
+          : isScrolled
+            ? "bg-brand/90 sticky h-20 backdrop-blur"
+            : "h-24 bg-transparent"
       }`}
     >
       <div className="brand-width flex w-full items-center justify-between font-light tracking-wider text-white capitalize">

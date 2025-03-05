@@ -15,7 +15,7 @@ export default function Footer() {
           >
             AGDF
           </Link>
-          <p className="mt-2">
+          <p className="mt-2 text-sm lg:text-base">
             African Green Growth and Development Forum (AGDF) is dedicated to
             advancing Africa’s transition to a greener economy. Our
             multidisciplinary team collaborates across the public, private, and
@@ -54,7 +54,7 @@ export default function Footer() {
         {/* COPYRIGHT NOTICE */}
         <p className="brand-animate text-center text-xs font-light text-white/50 capitalize">
           Copyright © {new Date().getFullYear()} African Green Growth and
-          Development Forum (AGDF). <br />
+          Development Forum (AGDF). <br className="hidden md:block" />
           All rights reserved. Site design by
           <Link href="/" className="hover:text-brand brand-animate">
             {" "}
