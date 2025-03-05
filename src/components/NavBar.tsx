@@ -14,10 +14,9 @@ export default function NavBar() {
   const pathname = usePathname();
   const { isLgScreen } = useResponsive();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useLockBodyScroll(isMenuOpen);
-
-  const toggleMenu = () => setIsMenuOpen((prev) => !prev);
 
   useEffect(() => {
     if (isLgScreen) {
@@ -25,10 +24,22 @@ export default function NavBar() {
     }
   }, [isLgScreen]);
 
+  useEffect(() => {
+    if (!isLgScreen) {
+      const handleScroll = () => {
+        setIsScrolled(window.scrollY > 10);
+      };
+      window.addEventListener("scroll", handleScroll);
+      return () => window.removeEventListener("scroll", handleScroll);
+    }
+  }, [isLgScreen]);
+
   return (
     <nav
       aria-label="Main Navigation"
-      className={`${isLgScreen ? "h-24" : "sticky h-16"} bg-brand top-0 z-20 flex h-24 w-full items-center justify-center`}
+      className={`bg-brand top-0 z-40 flex w-full items-center justify-center transition-all duration-300 ${
+        isLgScreen ? "h-24" : isScrolled ? "sticky h-20" : "h-24"
+      }`}
     >
       <div className="brand-width flex w-full items-center justify-between font-light tracking-wider text-white capitalize">
         {/* LOGO */}
@@ -41,25 +52,25 @@ export default function NavBar() {
 
         {/* DESKTOP MENU */}
         <div className="hidden items-center gap-x-10 lg:flex">
-          {pathnames.map((path) => {
-            return (
-              <Link
-                key={path}
-                href={`/${path}`}
-                className={`${pathname === "path" ? "bg-black/10" : "hover:bg-black/10"} brand-animate rounded px-4 py-2`}
-              >
-                {path.includes("-") ? path.replace("-", " ") : path}
-              </Link>
-            );
-          })}
+          {pathnames.map((path) => (
+            <Link
+              key={path}
+              href={`/${path}`}
+              className={`${
+                pathname === `/${path}` ? "bg-black/10" : "hover:bg-black/10"
+              } brand-animate rounded px-4 py-2`}
+            >
+              {path.replace("-", " ")}
+            </Link>
+          ))}
         </div>
 
         {/* MOBILE MENU BUTTON */}
         <motion.button
-          onClick={() => toggleMenu()}
+          onClick={() => setIsMenuOpen((prev) => !prev)}
           aria-expanded={isMenuOpen}
           aria-label="Toggle Mobile Menu"
-          className="z-30 text-3xl lg:hidden"
+          className="z-50 text-3xl lg:hidden"
           initial={{ opacity: 0, scale: 0.8 }}
           whileHover={{ scale: 1.1 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -71,30 +82,32 @@ export default function NavBar() {
 
         {/* MOBILE MENU */}
         <AnimatePresence>
-          {isMenuOpen ? (
+          {isMenuOpen && (
             <motion.div
               role="dialog"
               key="mobile-menu"
               aria-modal="true"
-              className="fixed inset-0 z-20 flex flex-col items-center justify-center gap-12 bg-black text-2xl font-bold text-white"
+              className="fixed inset-0 z-40 flex flex-col items-center justify-center gap-12 bg-black text-2xl font-bold text-white"
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "tween", duration: 0.4 }}
             >
-              {pathnames.map((path) => {
-                return (
-                  <Link
-                    key={path}
-                    href={`/${path}`}
-                    className={`${pathname === "path" ? "text-brand bg-white/10" : "hover:text-brand hover:bg-white/10"} brand-animate rounded px-6 py-3`}
-                  >
-                    {path.includes("-") ? path.replace("-", " ") : path}
-                  </Link>
-                );
-              })}
+              {pathnames.map((path) => (
+                <Link
+                  key={path}
+                  href={`/${path}`}
+                  className={`${
+                    pathname === `/${path}`
+                      ? "text-brand bg-white/10"
+                      : "hover:text-brand hover:bg-white/10"
+                  } brand-animate rounded px-6 py-3`}
+                >
+                  {path.replace("-", " ")}
+                </Link>
+              ))}
             </motion.div>
-          ) : null}
+          )}
         </AnimatePresence>
       </div>
     </nav>
