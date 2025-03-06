@@ -37,13 +37,7 @@ export default function NavBar() {
   return (
     <nav
       aria-label="Main Navigation"
-      className={`absolute top-0 z-40 flex w-full items-center justify-center transition-all duration-300 ${
-        isLgScreen
-          ? "h-24"
-          : isScrolled
-            ? "bg-brand/90 sticky h-20 backdrop-blur"
-            : "h-24 bg-transparent"
-      }`}
+      className="absolute top-0 z-40 flex h-24 w-full items-center justify-center"
     >
       <div className="brand-width flex w-full items-center justify-between font-light tracking-wider text-white capitalize">
         {/* LOGO */}
@@ -61,7 +55,9 @@ export default function NavBar() {
               key={path}
               href={`/${path}`}
               className={`${
-                pathname === `/${path}` ? "bg-black/10" : "hover:bg-black/10"
+                pathname === `/${path}`
+                  ? "bg-brand/20 backdrop-blur"
+                  : "hover:bg-brand/20 hover:backdrop-blur"
               } brand-animate rounded px-4 py-2`}
             >
               {path.replace("-", " ")}
