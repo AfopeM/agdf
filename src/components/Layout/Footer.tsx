@@ -6,7 +6,7 @@ export default function Footer() {
   const socialStyling =
     "text-white hover:text-black brand-animate hover:scale-110";
   return (
-    <footer className="mt-20 w-full bg-[url('/footer.png')] bg-cover bg-center pt-32 pb-12 md:bg-contain lg:mt-0">
+    <footer className="mt-20 w-full bg-[url('/footer.png')] bg-cover bg-center pt-40 pb-12 md:bg-contain lg:mt-0">
       <div className="brand-width flex flex-col items-center justify-center gap-4">
         <div className="text-center text-white/75 lg:max-w-4xl">
           {/* LOGO */}
