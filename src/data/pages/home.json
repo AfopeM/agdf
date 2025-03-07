@@ -1,0 +1,69 @@
+{
+  "our-mission": {
+    "title": "Green Economy Initiatives",
+    "tagline": "Driving sustainable growth, enhancing capacity, and fostering innovation throughout Africa to create lasting positive impacts on communities, economies, and the environment.",
+    "mission": [
+      {
+        "id": 1,
+        "title": "Circular economy",
+        "desc": "Conduct of research in green economy and growth opportunities (micro and macro capital assets) in Africa."
+      },
+      {
+        "id": 2,
+        "title": "Capacity building",
+        "desc": "Provision of technical expertise to build the capacity of policymakers and critical stakeholders on green economy."
+      },
+      {
+        "id": 3,
+        "title": "Green legislation",
+        "desc": "Promotion of green legislation that foster the emergence of robust governance and institutional arrangement."
+      },
+      {
+        "id": 4,
+        "title": "Green transitions",
+        "desc": "Leverage green financing and technology to support transition of communities & private sector players to green growth & investments."
+      }
+    ]
+  },
+  "our-project": {
+    "title": "Knowledge Products",
+    "tagline": "AGDF addresses environmental issues by focusing on key areas to improve local livelihoods, including governance, agriculture, forestry, water management, tourism, renewable energy, waste, manufacturing, and transport.",
+    "projects": [
+      {
+        "title": "Waste/Circular Economy",
+        "tag": "Circular Economy; GHG Emissions",
+        "desc": "Waste/Circular Economy (CE) Analysis for the Enhancement of Nigeria’s Nationally Determined Contribution (NDC) 2021-2025"
+      },
+      {
+        "title": "AFOLU based climate change",
+        "tag": "Climate Change Mitigation & Adaptation",
+        "desc": "Strengthening adaptation policies and AFOLU based climate change mitigation interventions relevant to African forestry and people in Anglophone Africa"
+      },
+      {
+        "title": "Low-Carbon Development in Nigeria",
+        "tag": "Climate Change Mitigation & Adaptation",
+        "desc": "Assessing Low-Carbon Development in Nigeria - An Analysis of Four Sectors"
+      },
+      {
+        "title": "SESA for Nigeria REDD+ Readiness",
+        "tag": "Climate Change Mitigation & Adaptation",
+        "desc": "Strategic Environmental and Social Assessment for Nigeria REDD+ Readiness"
+      },
+      {
+        "title": "Summary for Policy Makers",
+        "tag": "Green Economy",
+        "desc": "Green Economy Framework for Cross River State - Summary for Policy Makers"
+      },
+      {
+        "title": "Building Coastal Resilience",
+        "tag": "Coastal Resilience",
+        "desc": "Building Coastal Resilience through an Integrated Approach - Lessons from Ghana"
+      },
+      {
+        "title": "Nigeria’s Implementation of its Orginal NDC",
+        "tag": "Climate Change & Development",
+        "desc": "An Assessment of Nigeria’s Implementation of its Orginal Nationally Determined Contributions (NDCs) and Implications for the Revised Version"
+      }
+    ]
+  }
+}

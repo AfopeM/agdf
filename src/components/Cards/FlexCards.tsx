@@ -32,6 +32,8 @@ export default function FlexCards({ projects }: FlexCardsProp) {
       : [projects];
   }, [isLgScreen, projects]);
 
+  console.log("Base URL:", process.env.NEXT_PUBLIC_BASE_URL);
+
   return (
     <div className="flex flex-col gap-4">
       {chunkedCardContent.map((row, rowIndex) => (
@@ -40,12 +42,17 @@ export default function FlexCards({ projects }: FlexCardsProp) {
           className={
             isLgScreen
               ? "flex flex-wrap justify-center gap-4"
-              : "mx-auto flex w-96 flex-col gap-4"
+              : "mx-auto flex max-w-sm min-w-xs flex-col gap-4"
           }
         >
           {row.map((project, index) => {
             const itemIndex = rowIndex * 4 + index;
             const isActive = activeIndex === itemIndex;
+            const projectID = project.title
+              .toLowerCase()
+              .replace(/\//g, "_")
+              .replace(/ /g, "_")
+              .replace(/-/g, "_");
 
             return (
               <article
@@ -53,7 +60,7 @@ export default function FlexCards({ projects }: FlexCardsProp) {
                 onMouseEnter={() => isLgScreen && setActiveIndex(itemIndex)}
                 onMouseLeave={() => isLgScreen && setActiveIndex(null)}
                 onClick={() => !isLgScreen && handleClick(itemIndex)}
-                className={`group brand-animate relative h-32 w-full cursor-pointer overflow-hidden rounded bg-no-repeat text-center text-white ${
+                className={`group brand-animate relative h-32 w-full cursor-pointer overflow-hidden rounded bg-no-repeat text-center text-white lg:hover:bg-cover ${
                   isLgScreen
                     ? activeIndex === itemIndex
                       ? "lg:flex-[2]"
@@ -62,17 +69,17 @@ export default function FlexCards({ projects }: FlexCardsProp) {
                         ? "lg:flex-[0.7]"
                         : "lg:flex-[1]"
                     : activeIndex === itemIndex
-                      ? "h-[30vh]"
+                      ? "h-[35vh]"
                       : "h-[20vh]"
                 } lg:h-[400px]`}
                 style={{
-                  backgroundImage: `url('/project/${project.title.replace(/\//g, "_").replace(/ /g, "_").replace(/-/g, "_")}.png')`,
+                  backgroundImage: `url('/projects/${project.title.replace(/\//g, "_").replace(/ /g, "_").replace(/-/g, "_")}.png')`,
                 }}
               >
                 <div
                   className={`brand-animate absolute inset-0 flex flex-col items-center justify-center bg-black/70 p-4 opacity-0 backdrop-blur ${isLgScreen ? "group-hover:opacity-100" : isActive ? "opacity-100" : "pointer-events-none opacity-0"}`}
                 >
-                  <h4 className="text-xl font-black uppercase md:text-2xl">
+                  <h4 className="text-lg font-black uppercase md:text-xl lg:text-2xl">
                     {project.title}
                   </h4>
                   <p className="mt-1 mb-6 max-w-sm text-sm text-gray-400 md:max-w-md md:text-base">
@@ -82,7 +89,9 @@ export default function FlexCards({ projects }: FlexCardsProp) {
                     newTab
                     size="sm"
                     text="learn more"
-                    link={`/project/${project.title.replace(/\//g, "_").replace(/ /g, "_").replace(/-/g, "_")}`}
+                    // link={`/projects/${projectID}`}
+                    // link={`${process.env.NEXT_PUBLIC_BASE_URL}/projects/${projectID}`}
+                    link={`localhost:3000/projects/${projectID}`}
                   />
                 </div>
               </article>

@@ -24,7 +24,7 @@ export default function FadeInBackground({
       className="pointer-events-none absolute inset-0 z-10 h-full w-full"
       style={{
         background: `linear-gradient(${gradientDirection}, rgba(0,0,0,0) ${percentage}, rgba(0,0,0,1) 100%)`,
-        backgroundColor: isDark ? "rgba(0, 0, 0, 0.7)" : "transparent", // Ensure the black background works
+        backgroundColor: isDark ? "rgba(0, 0, 0, 0.7)" : "transparent",
       }}
     />
   );

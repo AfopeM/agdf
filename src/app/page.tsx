@@ -1,4 +1,5 @@
 import {
+  Tagline,
   FlexCards,
   TeamCards,
   MemberCard,
@@ -7,7 +8,7 @@ import {
   SectionHeader,
   FadeInBackground,
 } from "@/components";
-import homeData from "@/data/home.json";
+import homeData from "@/data/pages/home.json";
 import teamData from "@/data/team.json";
 
 export default function Home() {
@@ -21,9 +22,7 @@ export default function Home() {
         <FadeInBackground direction="bottom" isDark />
         <div className="brand-width relative z-20 -mt-12 flex flex-col items-center justify-center gap-4 text-center md:mt-0">
           <h1 className="text-3xl font-black text-white capitalize md:text-5xl">
-            <span className="text-brand bg-brand/30 mx-auto mb-4 block w-max rounded px-6 py-2 text-sm font-light tracking-wider uppercase backdrop-blur">
-              Civil Society Think Tank
-            </span>
+            <Tagline text="Civil Society Think Tank" />
             Empowering Africa’s <br />
             Green Future
           </h1>
@@ -86,7 +85,7 @@ export default function Home() {
                 <MemberCard
                   key={index}
                   name={member}
-                  image={member.replace(" ", "_")}
+                  image={member.toLowerCase().replace(" ", "_")}
                 />
               ))}
             </TeamCards>
