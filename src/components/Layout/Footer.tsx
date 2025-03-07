@@ -1,20 +1,17 @@
 import Link from "next/link";
+import Logo from "../Typography/Logo";
 import { FaFacebookF, FaInstagram, FaYoutube } from "react-icons/fa";
 
 export default function Footer() {
   const socialStyling =
-    "text-white hover:text-brand brand-animate hover:scale-110";
+    "text-white hover:text-black brand-animate hover:scale-110";
   return (
-    <footer className="w-full bg-black py-12">
+    <footer className="mt-20 w-full bg-[url('/footer.png')] bg-cover bg-center pt-32 pb-12 md:bg-contain lg:mt-0">
       <div className="brand-width flex flex-col items-center justify-center gap-4">
         <div className="text-center text-white/75 lg:max-w-4xl">
           {/* LOGO */}
-          <Link
-            href="/"
-            className="brand-animate text-4xl font-bold tracking-tighter text-white uppercase hover:scale-105"
-          >
-            AGDF
-          </Link>
+          <Logo />
+          {/* CONTENT */}
           <p className="mt-2 text-sm lg:text-base">
             African Green Growth and Development Forum (AGDF) is dedicated to
             advancing Africa’s transition to a greener economy. Our
@@ -56,7 +53,7 @@ export default function Footer() {
           Copyright © {new Date().getFullYear()} African Green Growth and
           Development Forum (AGDF). <br className="hidden md:block" />
           All rights reserved. Site design by
-          <Link href="/" className="hover:text-brand brand-animate">
+          <Link href="/" className="brand-animate hover:text-black">
             {" "}
             Afope Matilukuro
           </Link>

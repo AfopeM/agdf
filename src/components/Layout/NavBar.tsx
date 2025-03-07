@@ -1,11 +1,13 @@
 "use client";
 
 import Link from "next/link";
+import Logo from "../Typography/Logo";
 import { useState, useEffect } from "react";
 import { FiX, FiMenu } from "react-icons/fi";
 import { usePathname } from "next/navigation";
 import { useLockBodyScroll } from "react-use";
 import useResponsive from "@/hooks/useResponsive";
+import PrimaryButton from "../Buttons/PrimaryButton";
 import { motion, AnimatePresence } from "framer-motion";
 
 const pathnames = ["about", "contact-us"];
@@ -14,23 +16,12 @@ export default function NavBar() {
   const pathname = usePathname();
   const { isLgScreen } = useResponsive();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
 
   useLockBodyScroll(isMenuOpen);
 
   useEffect(() => {
     if (isLgScreen) {
       setIsMenuOpen(false);
-    }
-  }, [isLgScreen]);
-
-  useEffect(() => {
-    if (!isLgScreen) {
-      const handleScroll = () => {
-        setIsScrolled(window.scrollY > 10);
-      };
-      window.addEventListener("scroll", handleScroll);
-      return () => window.removeEventListener("scroll", handleScroll);
     }
   }, [isLgScreen]);
 
@@ -41,27 +32,16 @@ export default function NavBar() {
     >
       <div className="brand-width flex w-full items-center justify-between font-light tracking-wider text-white capitalize">
         {/* LOGO */}
-        <Link
-          href="/"
-          className="brand-animate text-3xl font-bold tracking-tighter uppercase hover:scale-105"
-        >
-          AGDF
-        </Link>
+        <Logo />
 
         {/* DESKTOP MENU */}
         <div className="hidden items-center gap-x-10 lg:flex">
           {pathnames.map((path) => (
-            <Link
+            <PrimaryButton
               key={path}
-              href={`/${path}`}
-              className={`${
-                pathname === `/${path}`
-                  ? "bg-brand/20 backdrop-blur"
-                  : "hover:bg-brand/20 hover:backdrop-blur"
-              } brand-animate rounded px-4 py-2`}
-            >
-              {path.replace("-", " ")}
-            </Link>
+              link={path}
+              text={path.replace("-", " ")}
+            />
           ))}
         </div>
 
@@ -75,7 +55,7 @@ export default function NavBar() {
           whileHover={{ scale: 1.1 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
-          whileTap={{ rotate: 360 }}
+          whileTap={{ scale: 0.5 }}
         >
           {isMenuOpen ? <FiX /> : <FiMenu />}
         </motion.button>

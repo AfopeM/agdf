@@ -5,20 +5,19 @@ interface SectionHeadingProp {
   isReverse?: boolean;
 }
 
-export function SectionHeading({
+export default function SectionHeader({
   title,
   content,
   isLight,
   isReverse,
 }: SectionHeadingProp) {
   const isLightStyling = isLight ? "text-white" : "text-black";
-  const isReverseStylng = isReverse ? "lg:flex-row-reverse" : "lg:flex-row ";
   return (
     <div
       className={`${isReverse ? "lg:flex-row-reverse" : "lg:flex-row"} mb-16 flex w-full flex-col items-center justify-between gap-6 text-center`}
     >
       <h2
-        className={`${isLightStyling} ${isReverse ? "lg:self-end lg:text-end" : "lg:self-start lg:text-start"} relative text-3xl font-bold capitalize lg:text-4xl`}
+        className={`${isLightStyling} ${isReverse ? "lg:text-end" : "lg:text-start"} relative text-3xl font-bold capitalize lg:self-start lg:text-4xl`}
       >
         {title}
         <span
@@ -27,7 +26,7 @@ export function SectionHeading({
       </h2>
 
       <p
-        className={`${isReverse ? "lg:text-start" : "lg:text-end"} text-base text-gray-400 lg:max-w-md lg:text-lg`}
+        className={`${isReverse ? "lg:text-start" : "lg:text-end"} text-base text-gray-400 lg:max-w-xl lg:text-lg`}
       >
         {content}
       </p>

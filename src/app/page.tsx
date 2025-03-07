@@ -1,11 +1,30 @@
-import Link from "next/link";
-import { SectionHeading, FlexCardWrapper } from "@/components";
+import {
+  FlexCards,
+  TeamCards,
+  MemberCard,
+  NumberedCard,
+  PrimaryButton,
+  SectionHeader,
+  FadeInBackground,
+} from "@/components";
+import homeData from "@/data/home.json";
+import teamData from "@/data/team.json";
 
 export default function Home() {
+  const ourMission = homeData["our-mission"];
+  const ourProject = homeData["our-project"];
+  const ourTeam = teamData.team;
+
+  const images = [
+    { name: "joe", image: "hero.jpeg" },
+    { name: "adam", image: "hero.jpeg" },
+    { name: "susan", image: "hero.jpeg" },
+  ];
+
   return (
     <>
       <header className="relative flex h-screen w-full items-center justify-center bg-[url('/hero.jpeg')] bg-cover bg-center">
-        <div className="absolute inset-0 z-10 h-full w-full bg-black/80 bg-[linear-gradient(to_bottom,rgba(0,0,0,0)_70%,rgba(0,0,0,1)_100%)]" />
+        <FadeInBackground direction="bottom" isDark />
         <div className="brand-width relative z-20 -mt-12 flex flex-col items-center justify-center gap-4 text-center md:mt-0">
           <h1 className="text-3xl font-black text-white capitalize md:text-5xl">
             <span className="text-brand bg-brand/30 mx-auto mb-4 block w-max rounded px-6 py-2 text-sm font-light tracking-wider uppercase backdrop-blur">
@@ -19,67 +38,67 @@ export default function Home() {
             green growth. Together, we’re shaping a resilient, eco-friendly
             tomorrow.
           </p>
-          <Link
-            href="/about"
-            className="bg-brand hover:text-brand brand-animate mt-8 rounded px-6 py-2 font-bold tracking-wider text-white capitalize hover:scale-105 hover:bg-white"
-          >
-            Learn More
-          </Link>
+          <PrimaryButton text="learn more" link="about" />
         </div>
       </header>
 
       <main>
         {/* SECTION-01 */}
-        <section className="bg-black py-24">
+        <section className="bg-black py-24 lg:py-48">
           <div className="brand-width">
-            <SectionHeading
+            <SectionHeader
               isLight
-              title="section heading"
-              content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos
-                deleniti minima maiores?"
+              title={ourProject.title}
+              content={ourProject.tagline}
             />
-            <FlexCardWrapper />
+            <FlexCards projects={ourProject.projects} />
           </div>
         </section>
 
         {/* SECTION-02 */}
-        <section className="relative bg-[url('/hero.jpeg')] bg-cover bg-center py-24">
-          <div className="absolute inset-0 z-10 h-full w-full bg-black/80 bg-[linear-gradient(to_top,rgba(0,0,0,0)_30%,rgba(0,0,0,1)_100%)]" />
+        <section className="relative bg-[url('/hero.jpeg')] bg-cover bg-center py-24 lg:py-48">
+          <FadeInBackground direction="top" />
+          <FadeInBackground direction="bottom" isDark />
           <div className="brand-width relative z-10">
-            <SectionHeading
+            <SectionHeader
               isLight
               isReverse
-              title="section heading"
-              content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos
-                deleniti minima maiores?"
+              title={ourMission.title}
+              content={ourMission.tagline}
             />
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4">
-              {[1, 2, 3, 4].map((num, i) => {
-                return (
-                  <article
-                    key={num}
-                    className="group ring-brand rounded-xl bg-transparent px-10 py-12 text-center text-white ring-4 backdrop-blur"
-                  >
-                    <span className="bg-brand brand-animate mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded text-3xl font-black group-hover:scale-80">
-                      {i + 1}
-                    </span>
-                    <div className="brand-animate group-hover:scale-105">
-                      <h4 className="text-xl font-black uppercase">title</h4>
-                      <p className="text-sm text-gray-400 lg:text-base">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Eveniet, amet dicta, rem officia veniam rerum at velit
-                        quo cupiditate iusto magni.
-                      </p>
-                    </div>
-                  </article>
-                );
-              })}
+              {ourMission.mission.map((item) => (
+                <NumberedCard
+                  id={item.id}
+                  key={item.title}
+                  desc={item.desc}
+                  title={item.title}
+                />
+              ))}
             </div>
+          </div>
+        </section>
+
+        {/* SECTION-03 */}
+        <section className="bg-black py-24 lg:py-48">
+          <div className="brand-width">
+            <SectionHeader
+              isLight
+              title={ourTeam.title}
+              content={ourTeam.tagline}
+            />
+            <TeamCards>
+              {[...ourTeam.members, ...ourTeam.members].map((member, index) => (
+                <MemberCard
+                  key={index}
+                  name={member}
+                  image={member.replace(" ", "_")}
+                />
+              ))}
+            </TeamCards>
           </div>
         </section>
       </main>
     </>
   );
 }
-
-// bg-[url('/${"hero.jpeg"}')] ${nums.length % 2 !== 0 && nums.length - 1 === i ? "md:col-span-2 lg:col-span-3" : ""}
