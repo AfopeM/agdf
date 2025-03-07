@@ -15,12 +15,6 @@ export default function Home() {
   const ourProject = homeData["our-project"];
   const ourTeam = teamData.team;
 
-  const images = [
-    { name: "joe", image: "hero.jpeg" },
-    { name: "adam", image: "hero.jpeg" },
-    { name: "susan", image: "hero.jpeg" },
-  ];
-
   return (
     <>
       <header className="relative flex h-screen w-full items-center justify-center bg-[url('/hero.jpeg')] bg-cover bg-center">

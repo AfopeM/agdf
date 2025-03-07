@@ -30,7 +30,7 @@ export default function FlexCards({ projects }: FlexCardsProp) {
           return acc;
         }, [] as FlexCardProp[][])
       : [projects];
-  }, [isLgScreen]);
+  }, [isLgScreen, projects]);
 
   return (
     <div className="flex flex-col gap-4">
