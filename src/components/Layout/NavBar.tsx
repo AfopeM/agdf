@@ -25,6 +25,10 @@ export default function NavBar() {
     }
   }, [isLgScreen]);
 
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [pathname]);
+
   return (
     <nav
       aria-label="Main Navigation"
@@ -39,7 +43,7 @@ export default function NavBar() {
           {pathnames.map((path) => (
             <PrimaryButton
               key={path}
-              link={path}
+              link={`/${path}`}
               text={path.replace("-", " ")}
             />
           ))}

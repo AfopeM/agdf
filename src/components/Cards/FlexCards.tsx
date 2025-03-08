@@ -1,10 +1,10 @@
 "use client";
-
 import { useState, useMemo } from "react";
 import useResponsive from "@/hooks/useResponsive";
 import PrimaryButton from "../Buttons/PrimaryButton";
 
 interface FlexCardProp {
+  id: string;
   title: string;
   tag: string;
   desc: string;
@@ -32,8 +32,6 @@ export default function FlexCards({ projects }: FlexCardsProp) {
       : [projects];
   }, [isLgScreen, projects]);
 
-  console.log("Base URL:", process.env.NEXT_PUBLIC_BASE_URL);
-
   return (
     <div className="flex flex-col gap-4">
       {chunkedCardContent.map((row, rowIndex) => (
@@ -48,11 +46,6 @@ export default function FlexCards({ projects }: FlexCardsProp) {
           {row.map((project, index) => {
             const itemIndex = rowIndex * 4 + index;
             const isActive = activeIndex === itemIndex;
-            const projectID = project.title
-              .toLowerCase()
-              .replace(/\//g, "_")
-              .replace(/ /g, "_")
-              .replace(/-/g, "_");
 
             return (
               <article
@@ -73,7 +66,7 @@ export default function FlexCards({ projects }: FlexCardsProp) {
                       : "h-[20vh]"
                 } lg:h-[400px]`}
                 style={{
-                  backgroundImage: `url('/projects/${project.title.replace(/\//g, "_").replace(/ /g, "_").replace(/-/g, "_")}.png')`,
+                  backgroundImage: `url('/projects/${project.id}.png')`,
                 }}
               >
                 <div
@@ -85,13 +78,12 @@ export default function FlexCards({ projects }: FlexCardsProp) {
                   <p className="mt-1 mb-6 max-w-sm text-sm text-gray-400 md:max-w-md md:text-base">
                     {project.desc}
                   </p>
+
                   <PrimaryButton
                     newTab
                     size="sm"
                     text="learn more"
-                    // link={`/projects/${projectID}`}
-                    // link={`${process.env.NEXT_PUBLIC_BASE_URL}/projects/${projectID}`}
-                    link={`localhost:3000/projects/${projectID}`}
+                    link={`/projects/${project.id}`}
                   />
                 </div>
               </article>

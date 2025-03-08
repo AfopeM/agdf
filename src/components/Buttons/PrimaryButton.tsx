@@ -21,7 +21,8 @@ export default function PrimaryButton({
     <>
       {newTab ? (
         <Link
-          href={`/${link}`}
+          href={`
+            ${link}`}
           rel="noopener noreferrer"
           target="_blank"
           className={`${sizeStyle} ${btnStyle}`}

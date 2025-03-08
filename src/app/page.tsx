@@ -18,10 +18,11 @@ export default function Home() {
 
   return (
     <>
+      {/* HEADER */}
       <header className="relative flex h-screen w-full items-center justify-center bg-[url('/hero.jpeg')] bg-cover bg-center">
         <FadeInBackground direction="bottom" isDark />
         <div className="brand-width relative z-20 -mt-12 flex flex-col items-center justify-center gap-4 text-center md:mt-0">
-          <h1 className="text-3xl font-black text-white capitalize md:text-5xl">
+          <h1 className="flex flex-col items-center text-3xl font-black text-white capitalize md:text-5xl">
             <Tagline text="Civil Society Think Tank" />
             Empowering Africa’s <br />
             Green Future
@@ -31,12 +32,12 @@ export default function Home() {
             green growth. Together, we’re shaping a resilient, eco-friendly
             tomorrow.
           </p>
-          <PrimaryButton text="learn more" link="about" />
+          <PrimaryButton text="learn more" link="/about" />
         </div>
       </header>
 
       <main>
-        {/* SECTION-01 */}
+        {/* OUR PROJECTS */}
         <section className="bg-black py-24 lg:py-48">
           <div className="brand-width">
             <SectionHeader
@@ -48,7 +49,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* SECTION-02 */}
+        {/* OUR SERVICES */}
         <section className="relative bg-[url('/hero.jpeg')] bg-cover bg-center py-24 lg:py-48">
           <FadeInBackground direction="top" />
           <FadeInBackground direction="bottom" isDark />
@@ -72,7 +73,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* SECTION-03 */}
+        {/* OUR TEAM */}
         <section className="bg-black py-24 lg:py-48">
           <div className="brand-width">
             <SectionHeader
