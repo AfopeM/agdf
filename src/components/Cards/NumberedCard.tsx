@@ -1,10 +1,14 @@
 interface NumberedCardProp {
   id: number;
-  title: string;
+  title?: string | null;
   desc: string;
 }
 
-export default function NumberedCard({ id, title, desc }: NumberedCardProp) {
+export default function NumberedCard({
+  id,
+  title = null,
+  desc,
+}: NumberedCardProp) {
   return (
     <article
       key={id}
@@ -14,7 +18,9 @@ export default function NumberedCard({ id, title, desc }: NumberedCardProp) {
         {id}
       </span>
       <div className="brand-animate group-hover:scale-105">
-        <h4 className="text-xl font-black uppercase">{title}</h4>
+        {title === null ? null : (
+          <h4 className="text-xl font-black uppercase">{title}</h4>
+        )}
         <p className="text-sm text-gray-400 lg:text-base">{desc}</p>
       </div>
     </article>

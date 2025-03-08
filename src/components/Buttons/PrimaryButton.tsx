@@ -30,7 +30,7 @@ export default function PrimaryButton({
           {text}
         </Link>
       ) : (
-        <Link href={`/${link}`} className={`${sizeStyle} ${btnStyle}`}>
+        <Link href={`${link}`} className={`${sizeStyle} ${btnStyle}`}>
           {text}
         </Link>
       )}
