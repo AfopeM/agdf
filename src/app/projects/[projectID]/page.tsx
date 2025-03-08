@@ -25,8 +25,8 @@ export default function ProjectPage() {
     .map((node) => node.raw.trim());
 
   const paragraphs = [];
-  for (let i = 0; i < sentences.length; i += 3) {
-    paragraphs.push(sentences.slice(i, i + 3).join(" "));
+  for (let i = 0; i < sentences.length; i += 2) {
+    paragraphs.push(sentences.slice(i, i + 2).join(" "));
   }
 
   return (
@@ -41,40 +41,39 @@ export default function ProjectPage() {
       </header>
 
       {/* MAIN SECTION */}
-      <main className="brand-width mt-12 space-y-10 text-center lg:mt-24 lg:text-start">
-        <div className="flex flex-col lg:flex-col-reverse">
-          <div className="space-y-6 lg:text-start">
-            {paragraphs.map((paragraph, index) => (
-              <p key={index}>{paragraph}</p>
-            ))}
-          </div>
-          <div className="flex flex-col justify-between capitalize lg:flex-row">
-            <ul>
-              {project.project_involved.map((partner) => (
-                <li key={partner} className="space-y-2">
-                  partner:
-                  <br />
-                  <span className="bg-brand/50 rounded px-4 py-2">
-                    {partner}
-                  </span>
-                </li>
-              ))}
-            </ul>
-            <div>
-              <p>
-                Date: <span className="font-bold">{project.date}</span>
-              </p>
-              <p>
-                Client: <span className="font-bold">{project.client}</span>
-              </p>
-            </div>
-          </div>
+      <main className="brand-width mt-12 space-y-10 lg:mt-24">
+        {/* DATE & CLIENT */}
+        <div className="flex flex-col justify-between text-start font-bold tracking-wider uppercase lg:flex-row-reverse">
+          <p>
+            Date: <span className="font-light">{project.date}</span>
+          </p>
+          <p>
+            Client: <span className="font-light">{project.client}</span>
+          </p>
         </div>
 
+        {/* PARAGRAPH */}
+        <div className="space-y-6 lg:text-start">
+          {paragraphs.map((paragraph, index) => (
+            <p key={index}>{paragraph}</p>
+          ))}
+        </div>
+
+        {/* PARTNERS */}
+        <ul className="flex flex-col gap-2 font-bold uppercase lg:flex-row lg:items-center">
+          <p>partner:</p>
+          {project.project_involved.map((partner) => (
+            <li
+              key={partner}
+              className="bg-brand/30 block w-max rounded px-4 py-2 font-light"
+            >
+              {partner}
+            </li>
+          ))}
+        </ul>
+
         {/* PDF BUTTON */}
-        {projectPDF && (
-          <PrimaryButton text="View Report" newTab link={projectPDF} />
-        )}
+        <PrimaryButton text="View Report" newTab link={projectPDF} />
       </main>
     </div>
   );
