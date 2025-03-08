@@ -7,7 +7,7 @@ import { FadeInBackground, PrimaryButton, Tagline, Title } from "@/components";
 
 export default function ProjectPage() {
   const params = useParams();
-  const projectID = params?.projectID as string;
+  const projectID = params?.id as string;
 
   const project = projects.find(
     (proj) => proj.id.toLowerCase() === projectID.toLowerCase(),
