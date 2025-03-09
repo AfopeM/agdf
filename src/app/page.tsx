@@ -1,5 +1,6 @@
 import {
   Tagline,
+  Heading,
   FlexCards,
   TeamCards,
   MemberCard,
@@ -12,14 +13,14 @@ import homeData from "@/data/pages/home.json";
 import teamData from "@/data/team.json";
 
 export default function Home() {
+  const ourTeam = teamData.team;
   const ourMission = homeData["our-mission"];
   const ourProject = homeData["our-project"];
-  const ourTeam = teamData.team;
 
   return (
     <>
       {/* HEADER */}
-      <header className="relative flex h-screen w-full items-center justify-center bg-[url('/hero.jpeg')] bg-cover bg-center">
+      <Heading height="100vh">
         <FadeInBackground direction="bottom" isDark />
         <div className="brand-width relative z-20 -mt-12 flex flex-col items-center justify-center gap-4 text-center md:mt-0">
           <h1 className="flex flex-col items-center text-3xl font-black text-white capitalize md:text-5xl">
@@ -34,7 +35,7 @@ export default function Home() {
           </p>
           <PrimaryButton text="learn more" link="/about" />
         </div>
-      </header>
+      </Heading>
 
       <main>
         {/* OUR PROJECTS */}

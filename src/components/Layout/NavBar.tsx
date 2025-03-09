@@ -31,6 +31,7 @@ export default function NavBar() {
 
   return (
     <nav
+      id="NavBar"
       aria-label="Main Navigation"
       className="absolute top-0 z-40 flex h-24 w-full items-center justify-center"
     >
@@ -54,7 +55,7 @@ export default function NavBar() {
           onClick={() => setIsMenuOpen((prev) => !prev)}
           aria-expanded={isMenuOpen}
           aria-label="Toggle Mobile Menu"
-          className="z-50 text-3xl lg:hidden"
+          className="z-50 cursor-pointer text-3xl lg:hidden"
           initial={{ opacity: 0, scale: 0.8 }}
           whileHover={{ scale: 1.1 }}
           animate={{ opacity: 1, scale: 1 }}

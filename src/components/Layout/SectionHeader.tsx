@@ -2,13 +2,15 @@ interface SectionHeadingProp {
   title: string;
   content?: string | null;
   isLight?: boolean;
+  isCenter?: boolean;
   isReverse?: boolean;
 }
 
 export default function SectionHeader({
   title,
   content = null,
-  isLight,
+  isLight = true,
+  isCenter,
   isReverse,
 }: SectionHeadingProp) {
   const isLightStyling = isLight ? "text-white" : "text-black";
@@ -16,11 +18,11 @@ export default function SectionHeader({
     <>
       {content === null ? (
         <h2
-          className={`${isLightStyling} relative mb-8 text-start text-3xl font-black uppercase lg:text-4xl`}
+          className={`${isLightStyling} ${isCenter ? "text-center lg:text-start" : "text-start"} relative mb-8 text-3xl font-black uppercase lg:text-4xl`}
         >
           {title}
           <span
-            className={`bg-brand absolute -bottom-2 left-0 h-1 w-28 lg:-bottom-4 lg:translate-x-0`}
+            className={`${isCenter ? "left-1/2 -translate-x-1/2 lg:left-0" : "left-0"} bg-brand absolute -bottom-2 h-1 w-28 lg:-bottom-4 lg:translate-x-0`}
           />
         </h2>
       ) : (

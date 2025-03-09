@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-interface PrimaryButtonProp {
+interface IPrimaryButton {
   link: string;
   text: string;
   newTab?: boolean;
@@ -12,7 +12,7 @@ export default function PrimaryButton({
   link,
   newTab,
   size = "md",
-}: PrimaryButtonProp) {
+}: IPrimaryButton) {
   const sizeStyle = size === "sm" ? "text-xs lg:text-base px-3" : "px-6";
   const btnStyle =
     "bg-brand hover:text-brand brand-animate rounded py-2 font-bold tracking-wider text-white capitalize hover:scale-105 hover:bg-white";

@@ -1,42 +1,18 @@
 {
-  "email": "info@agdf.eco",
-  "phone": "",
+  "contact-info": [
+    {
+      "title": "call us",
+      "content": "Got questions or need assistance? We're just a call away – Let's connect and find the solutions you need!",
+      "contact": "Coming Soon"
+    },
+    {
+      "title": "email us",
+      "content": "Have inquiries or feedback? Drop us an email – We’re eager to assist and respond to your needs promptly!",
+      "contact": "info@agdf.eco"
+    }
+  ],
   "address": {
     "institution": "Faculty of Environmental Sciences, University of Calabar",
-    "addressLine": "Calabar Etagbor, PMB 1115",
-    "city": "Calabar",
-    "state": "",
-    "postalCode": "",
-    "country": "Nigeria"
-  },
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Faculty+of+Environmental+Sciences,+University+of+Calabar,+Nigeria",
-  "contactForm": {
-    "fields": [
-      {
-        "name": "name",
-        "label": "Your Name",
-        "type": "text",
-        "placeholder": "Enter your name"
-      },
-      {
-        "name": "email",
-        "label": "Your Email",
-        "type": "email",
-        "placeholder": "Enter your email"
-      },
-      {
-        "name": "subject",
-        "label": "Subject",
-        "type": "text",
-        "placeholder": "Subject"
-      },
-      {
-        "name": "message",
-        "label": "Message",
-        "type": "textarea",
-        "placeholder": "Your message"
-      }
-    ],
-    "submitText": "Send Message"
+    "location": "Calabar Etagbor, PMB 1115 Calabar, Nigeria"
   }
 }

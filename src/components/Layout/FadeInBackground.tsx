@@ -1,12 +1,9 @@
-interface FadeInBackgroundProps {
+interface IFadeInBackground {
   direction: "top" | "bottom" | "left" | "right";
   isDark?: boolean;
 }
 
-export default function FadeInBackground({
-  direction,
-  isDark,
-}: FadeInBackgroundProps) {
+export default function I({ direction, isDark }: IFadeInBackground) {
   const gradientDirection = `to ${direction}`;
 
   const percentages: Record<string, string> = {

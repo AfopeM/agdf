@@ -5,15 +5,15 @@ import React from "react";
 import { motion } from "framer-motion";
 import FadeInBackground from "../Layout/FadeInBackground";
 
-interface MemberCardProp {
+interface IMemberCard {
   name: string;
   image: string;
 }
-interface TeamCardsProp {
+interface ITeamCards {
   children: React.ReactNode;
 }
 
-export function TeamCards({ children }: TeamCardsProp) {
+export function TeamCards({ children }: ITeamCards) {
   return (
     <div className="relative flex w-full overflow-hidden">
       <FadeInBackground direction="left" />
@@ -38,7 +38,7 @@ export function TeamCards({ children }: TeamCardsProp) {
   );
 }
 
-export function MemberCard({ name, image }: MemberCardProp) {
+export function MemberCard({ name, image }: IMemberCard) {
   return (
     <div
       key={name}

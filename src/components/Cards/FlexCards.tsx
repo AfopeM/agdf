@@ -3,18 +3,18 @@ import { useState, useMemo } from "react";
 import useResponsive from "@/hooks/useResponsive";
 import PrimaryButton from "../Buttons/PrimaryButton";
 
-interface FlexCardProp {
+interface IFlexCard {
   id: string;
   title: string;
   tag: string;
   desc: string;
 }
 
-interface FlexCardsProp {
-  projects: FlexCardProp[];
+interface iFlexCards {
+  projects: IFlexCard[];
 }
 
-export default function FlexCards({ projects }: FlexCardsProp) {
+export default function FlexCards({ projects }: iFlexCards) {
   const { isLgScreen } = useResponsive();
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
@@ -28,7 +28,7 @@ export default function FlexCards({ projects }: FlexCardsProp) {
           if (index % 4 === 0) acc.push([]);
           acc[acc.length - 1].push(item);
           return acc;
-        }, [] as FlexCardProp[][])
+        }, [] as IFlexCard[][])
       : [projects];
   }, [isLgScreen, projects]);
 

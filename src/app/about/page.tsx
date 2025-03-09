@@ -2,13 +2,22 @@ import teamData from "@/data/team.json";
 import aboutData from "@/data/pages/about.json";
 import {
   Title,
+  Heading,
   TeamCards,
   MemberCard,
   NumberedCard,
   SectionHeader,
   FadeInBackground,
 } from "@/components";
+import type { Metadata } from "next";
 import { split as splitSentences } from "sentence-splitter";
+
+export const metadata: Metadata = {
+  title: "About Us | AGDF",
+  description:
+    "Learn more about our mission, objectives, priority areas, and milestones. Meet our dedicated team and discover how we are driving impactful change.",
+};
+
 export default function AboutPage() {
   const { whoWeAre, objectives, priorityAreas, milestones } = aboutData;
   const { team } = teamData;
@@ -24,19 +33,19 @@ export default function AboutPage() {
   }
   return (
     <div className="text-white">
-      <header className="relative flex h-[500px] w-full items-center justify-center bg-[url('/hero.jpeg')] bg-cover bg-center">
+      <Heading>
         <FadeInBackground direction="bottom" isDark />
         <div className="brand-width relative z-20 flex flex-col items-center justify-center gap-4 text-center md:mt-0">
           <Title text="about us" />
         </div>
-      </header>
+      </Heading>
 
       <main>
         {/* SECTION-01 */}
         <section className="brand-width flex flex-col gap-20 py-24 lg:py-36">
           {/* WHO ARE WE */}
           <div>
-            <SectionHeader isLight title={whoWeAre.title} />
+            <SectionHeader title={whoWeAre.title} />
             <div className="space-y-6 font-light text-gray-400">
               {paragraphs.map((paragraph, index) => (
                 <p key={index}>{paragraph}</p>
@@ -46,14 +55,13 @@ export default function AboutPage() {
 
           {/* PRIORITIES */}
           <div>
-            <SectionHeader isLight title={priorityAreas.title} />
+            <SectionHeader title={priorityAreas.title} />
             <p className="text-gray-400">{priorityAreas.desc}</p>
           </div>
 
           {/* MILESTONES */}
           <div>
             <SectionHeader
-              isLight
               isReverse
               title={milestones.title}
               content={milestones.desc}
@@ -74,11 +82,7 @@ export default function AboutPage() {
           <FadeInBackground direction="top" />
           <FadeInBackground direction="bottom" isDark />
           <div className="brand-width relative z-10 space-y-3">
-            <SectionHeader
-              isLight
-              title={objectives.title}
-              content={objectives.desc}
-            />
+            <SectionHeader title={objectives.title} content={objectives.desc} />
 
             <div className="grid gap-6 lg:grid-cols-2 xl:grid-cols-3">
               {objectives.obj.map((item, i) => (

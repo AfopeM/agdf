@@ -1,6 +1,11 @@
 import Link from "next/link";
 import Logo from "../Typography/Logo";
-import { FaFacebookF, FaInstagram, FaYoutube } from "react-icons/fa";
+import {
+  // FaFacebookF,
+  // FaInstagram,
+  // FaYoutube,
+  FaLinkedin,
+} from "react-icons/fa";
 
 export default function Footer() {
   const socialStyling =
@@ -24,7 +29,7 @@ export default function Footer() {
         {/* SOCIAL MEDIA LINKS */}
         <nav aria-label="Social Media Links">
           <div className="flex items-center gap-6">
-            <Link
+            {/* <Link
               href="https://www.facebook.com"
               target="_blank"
               aria-label="Facebook"
@@ -44,6 +49,13 @@ export default function Footer() {
               aria-label="YouTube"
             >
               <FaYoutube className={socialStyling} size={22} />
+            </Link> */}
+            <Link
+              target="_blank"
+              aria-label="YouTube"
+              href="https://www.linkedin.com/company/african-green-growth-and-development-forum/?viewAsMember=true"
+            >
+              <FaLinkedin className={socialStyling} size={24} />
             </Link>
           </div>
         </nav>
