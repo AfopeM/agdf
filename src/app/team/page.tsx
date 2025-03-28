@@ -1,11 +1,5 @@
 import teamData from "@/data/team.json";
-import {
-  Title,
-  Heading,
-  TeamCards,
-  MemberCard,
-  FadeInBackground,
-} from "@/components";
+import { Title, Heading, MemberCard, FadeInBackground } from "@/components";
 export default function page() {
   const ourTeam = teamData.team;
   return (
