@@ -63,12 +63,7 @@ export default function Footer() {
         {/* COPYRIGHT NOTICE */}
         <p className="brand-animate text-center text-xs font-light text-white/50 capitalize">
           Copyright © {new Date().getFullYear()} African Green Growth and
-          Development Forum (AGDF). <br className="hidden md:block" />
-          All rights reserved. Site design by
-          <Link href="/" className="brand-animate hover:text-black">
-            {" "}
-            Afope Matilukuro
-          </Link>
+          Development Forum (AGDF). All rights reserved. 
         </p>
       </div>
     </footer>

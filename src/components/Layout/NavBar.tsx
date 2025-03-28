@@ -10,7 +10,7 @@ import useResponsive from "@/hooks/useResponsive";
 import PrimaryButton from "../Buttons/PrimaryButton";
 import { motion, AnimatePresence } from "framer-motion";
 
-const pathnames = ["about", "contact-us"];
+const pathnames = ["about", "team", "contact-us"];
 
 export default function NavBar() {
   const pathname = usePathname();

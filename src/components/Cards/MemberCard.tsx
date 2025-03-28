@@ -42,7 +42,8 @@ export function MemberCard({ name, image }: IMemberCard) {
   return (
     <div
       key={name}
-      className="relative h-72 w-80 flex-shrink-0 overflow-hidden rounded"
+      className="relative h-80 w-80 flex-shrink-0 overflow-hidden rounded-full"
+      // className="relative h-72 w-80 flex-shrink-0 overflow-hidden rounded"
     >
       <Image
         fill
