@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Metadata } from "next";
 import ContactData from "@/data/pages/contact-us.json";
 import { Title, Heading, FadeInBackground, SectionHeader } from "@/components";
@@ -10,6 +11,8 @@ export const metadata: Metadata = {
 
 export default function ContactUsPage() {
   const { "contact-info": contactInfo, address } = ContactData;
+  const contactBtnStyle =
+    "bg-brand/50 mx-auto mt-4 block w-max rounded px-4 py-2 text-white lg:mx-0 hover:bg-gray-100 hover:text-black font-bold tracking-widest";
 
   return (
     <div className="text-gray-400">
@@ -37,10 +40,22 @@ export default function ContactUsPage() {
                 <h4 className="text-xl font-bold text-white capitalize">
                   {info.title}
                 </h4>
-                <p>{info.content}</p>
-                <span className="bg-brand/50 mx-auto mt-4 block w-max rounded px-4 py-2 text-white lg:mx-0">
-                  {info.contact}
-                </span>
+                <h5>{info.content}</h5>
+                {info.title === "follow us" ? (
+                  <Link href={info.contact} className={contactBtnStyle}>
+                    LinkedIn
+                  </Link>
+                ) : (
+                  <Link
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={contactBtnStyle}
+                    href={`https://mail.google.com/mail/?view=cm&fs=1&to=${info.contact}`}
+                    // href={`mailto:${info.contact}`}
+                  >
+                    {info.contact}
+                  </Link>
+                )}
               </article>
             ))}
           </div>

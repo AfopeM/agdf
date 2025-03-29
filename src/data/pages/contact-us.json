@@ -1,14 +1,14 @@
 {
   "contact-info": [
     {
-      "title": "call us",
-      "content": "Got questions or need assistance? We're just a call away – Let's connect and find the solutions you need!",
-      "contact": "Coming Soon"
-    },
-    {
       "title": "email us",
       "content": "Have inquiries or feedback? Drop us an email – We’re eager to assist and respond to your needs promptly!",
       "contact": "info@agdf.eco"
+    },
+    {
+      "title": "follow us",
+      "content": "Follow our work on LinkedIn, lets connect and find the solutions you need",
+      "contact": "https://www.linkedin.com/company/african-green-growth-and-development-forum/?viewAsMember=true"
     }
   ],
   "address": {

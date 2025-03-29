@@ -43,7 +43,6 @@ export function MemberCard({ name, image }: IMemberCard) {
     <div
       key={name}
       className="relative h-80 w-80 flex-shrink-0 overflow-hidden rounded-full"
-      // className="relative h-72 w-80 flex-shrink-0 overflow-hidden rounded"
     >
       <Image
         fill
@@ -52,7 +51,7 @@ export function MemberCard({ name, image }: IMemberCard) {
         src={`/team/${image}.png`}
       />
 
-      <p className="brand-animate ring-brand absolute bottom-0 left-1/2 -translate-x-1/2 -translate-y-4 rounded bg-black/10 px-4 py-2 text-center text-sm text-white capitalize ring-2 backdrop-blur-xl lg:text-base">
+      <p className="bg-brand/10 absolute bottom-0 left-1/2 h-1/5 w-full -translate-x-1/2 pt-4 text-center text-white capitalize backdrop-blur-xl lg:text-base">
         {name}
       </p>
     </div>
