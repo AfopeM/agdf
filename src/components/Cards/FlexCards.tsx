@@ -3,11 +3,16 @@ import { useState, useMemo } from "react";
 import useResponsive from "@/hooks/useResponsive";
 import PrimaryButton from "../Buttons/PrimaryButton";
 
-interface IFlexCard {
+export interface IFlexCard {
   id: string;
   title: string;
   tag: string;
+  tagline: string;
+  project_involved: string[];
   desc: string;
+  full_desc: string;
+  client: string;
+  date: string;
 }
 
 interface iFlexCards {
@@ -22,19 +27,19 @@ export default function FlexCards({ projects }: iFlexCards) {
     setActiveIndex((prev) => (prev === index ? null : index));
   };
 
-  const chunkedCardContent = useMemo(() => {
-    return isLgScreen
-      ? projects.reduce((acc, item, index) => {
-          if (index % 4 === 0) acc.push([]);
-          acc[acc.length - 1].push(item);
-          return acc;
-        }, [] as IFlexCard[][])
-      : [projects];
-  }, [isLgScreen, projects]);
+  const chunkArray = (arr: IFlexCard[], size: number): IFlexCard[][] => {
+    return Array.from({ length: Math.ceil(arr.length / size) }, (_, i) =>
+      arr.slice(i * size, i * size + size),
+    );
+  };
+
+  const chunkedProjects = useMemo(() => {
+    return isLgScreen ? chunkArray(projects, 4) : [projects];
+  }, [projects, isLgScreen]);
 
   return (
     <div className="flex flex-col gap-4">
-      {chunkedCardContent.map((row, rowIndex) => (
+      {chunkedProjects.map((row, rowIndex) => (
         <div
           key={rowIndex}
           className={
@@ -53,15 +58,15 @@ export default function FlexCards({ projects }: iFlexCards) {
                 onMouseEnter={() => isLgScreen && setActiveIndex(itemIndex)}
                 onMouseLeave={() => isLgScreen && setActiveIndex(null)}
                 onClick={() => !isLgScreen && handleClick(itemIndex)}
-                className={`group brand-animate relative h-32 w-full cursor-pointer overflow-hidden rounded bg-center bg-no-repeat text-center text-white lg:hover:bg-cover ${
+                className={`group brand-animate relative h-32 w-full cursor-pointer overflow-hidden rounded bg-cover bg-center text-center text-white hover:bg-cover ${
                   isLgScreen
-                    ? activeIndex === itemIndex
+                    ? isActive
                       ? "lg:flex-[2]"
                       : activeIndex !== null &&
                           Math.floor(activeIndex / 4) === rowIndex
                         ? "lg:flex-[0.7]"
-                        : "lg:flex-[1]"
-                    : activeIndex === itemIndex
+                        : "lg:flex-1"
+                    : isActive
                       ? "h-[35vh]"
                       : "h-[20vh]"
                 } lg:h-[400px]`}
@@ -70,7 +75,7 @@ export default function FlexCards({ projects }: iFlexCards) {
                 }}
               >
                 <div
-                  className={`brand-animate absolute inset-0 flex flex-col items-center justify-center bg-black/70 p-4 opacity-0 backdrop-blur ${isLgScreen ? "group-hover:opacity-100" : isActive ? "opacity-100" : "pointer-events-none opacity-0"}`}
+                  className={`brand-animate absolute inset-0 flex flex-col items-center justify-center bg-black/70 p-4 opacity-0 backdrop-blur transition-opacity duration-300 ${isLgScreen ? "group-hover:opacity-100" : isActive ? "opacity-100" : "pointer-events-none opacity-0"}`}
                 >
                   <h4 className="text-lg font-black uppercase md:text-xl lg:text-2xl">
                     {project.title}

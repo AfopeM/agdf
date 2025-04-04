@@ -9,13 +9,15 @@ import {
   SectionHeader,
   FadeInBackground,
 } from "@/components";
-import homeData from "@/data/pages/home.json";
 import teamData from "@/data/team.json";
+import homeData from "@/data/pages/home.json";
+import projectData from "@/data/projects/projects.json";
 
 export default function Home() {
   const ourTeam = teamData.team;
   const ourMission = homeData["our-mission"];
-  const ourProject = homeData["our-project"];
+  const projectHeader = homeData["our-project"];
+  const ourProject = projectData;
 
   return (
     <>
@@ -43,10 +45,10 @@ export default function Home() {
           <div className="brand-width">
             <SectionHeader
               isLight
-              title={ourProject.title}
-              content={ourProject.tagline}
+              title={projectHeader.title}
+              content={projectHeader.tagline}
             />
-            <FlexCards projects={ourProject.projects} />
+            <FlexCards projects={ourProject} />
           </div>
         </section>
 

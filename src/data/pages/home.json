@@ -27,56 +27,6 @@
   },
   "our-project": {
     "title": "Knowledge Products",
-    "tagline": "AGDF addresses environmental issues by focusing on key areas to improve local livelihoods, including governance, agriculture, forestry, water management, tourism, renewable energy, waste, manufacturing, and transport.",
-    "projects": [
-      {
-        "id": "waste_circular_economy",
-        "title": "Waste/Circular Economy",
-        "tag": "Circular Economy; GHG Emissions",
-        "desc": "Waste/Circular Economy (CE) Analysis for the Enhancement of Nigeria’s Nationally Determined Contribution (NDC) 2021-2025"
-      },
-      {
-        "id": "afolu_based_climate_change",
-        "title": "AFOLU based climate change",
-        "tag": "Climate Change Mitigation & Adaptation",
-        "desc": "Strengthening adaptation policies and AFOLU based climate change mitigation interventions relevant to African forestry and people in Anglophone Africa"
-      },
-      {
-        "id": "low_carbon_development_in_nigeria",
-        "title": "Low-Carbon Development in Nigeria",
-        "tag": "Climate Change Mitigation & Adaptation",
-        "desc": "Assessing Low-Carbon Development in Nigeria - An Analysis of Four Sectors"
-      },
-      {
-        "id": "sesa_for_nigeria_redd_readiness",
-        "title": "SESA for Nigeria REDD+ Readiness",
-        "tag": "Climate Change Mitigation & Adaptation",
-        "desc": "Strategic Environmental and Social Assessment for Nigeria REDD+ Readiness"
-      },
-      {
-        "id": "summary_for_policy_makers",
-        "title": "Summary for Policy Makers",
-        "tag": "Green Economy",
-        "desc": "Green Economy Framework for Cross River State - Summary for Policy Makers"
-      },
-      {
-        "id": "building_coastal_resilience",
-        "title": "Building Coastal Resilience",
-        "tag": "Coastal Resilience",
-        "desc": "Building Coastal Resilience through an Integrated Approach - Lessons from Ghana"
-      },
-      {
-        "id": "nigerias_implementation_of_its_original_ndc",
-        "title": "Nigeria’s Implementation of its Orginal NDC",
-        "tag": "Climate Change & Development",
-        "desc": "An Assessment of Nigeria’s Implementation of its Orginal Nationally Determined Contributions (NDCs) and Implications for the Revised Version"
-      },
-      {
-        "id": "nigerias_transition_to_green_economy",
-        "title": "Nigeria’s Transition to Green Economy",
-        "tag": "Scoping Report",
-        "desc": "Linking Circular Economy and Natural Capital for Public Private Partnership (PPP) Investments"
-      }
-    ]
+    "tagline": "AGDF addresses environmental issues by focusing on key areas to improve local livelihoods, including governance, agriculture, forestry, water management, tourism, renewable energy, waste, manufacturing, and transport."
   }
 }
