@@ -5,7 +5,7 @@ import {
   Heading,
   TeamCards,
   MemberCard,
-  NumberedCard,
+  NumberedCards,
   SectionHeader,
   FadeInBackground,
 } from "@/components";
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 };
 
 export default function AboutPage() {
-  const { whoWeAre, objectives, priorityAreas, milestones } = aboutData;
+  const { whoWeAre, objective, priorityAreas, milestones } = aboutData;
   const { team } = teamData;
 
   const sentenceNodes = splitSentences(whoWeAre.desc);
@@ -82,13 +82,8 @@ export default function AboutPage() {
           <FadeInBackground direction="top" />
           <FadeInBackground direction="bottom" isDark />
           <div className="brand-width relative z-10 space-y-3">
-            <SectionHeader title={objectives.title} content={objectives.desc} />
-
-            <div className="grid gap-6 lg:grid-cols-2 xl:grid-cols-3">
-              {objectives.obj.map((item, i) => (
-                <NumberedCard id={i + 1} key={i} desc={item} />
-              ))}
-            </div>
+            <SectionHeader title={objective.title} content={objective.desc} />
+            <NumberedCards cards={objective.objectives} />
           </div>
         </section>
 

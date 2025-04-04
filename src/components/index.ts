@@ -6,7 +6,7 @@ import Heading from "./Layout/Heading";
 import FlexCards from "./Cards/FlexCards";
 import Tagline from "./Typography/Tagline";
 import ScrollToTop from "./Layout/ScrollToTop";
-import NumberedCard from "./Cards/NumberedCard";
+import NumberedCards from "./Cards/NumberedCard";
 import SectionHeader from "./Layout/SectionHeader";
 import PrimaryButton from "./Buttons/PrimaryButton";
 import FadeInBackground from "./Layout/FadeInBackground";
@@ -23,7 +23,7 @@ export {
   TeamCards,
   MemberCard,
   ScrollToTop,
-  NumberedCard,
+  NumberedCards,
   SectionHeader,
   PrimaryButton,
   FadeInBackground,

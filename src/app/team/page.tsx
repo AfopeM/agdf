@@ -11,7 +11,7 @@ export default function page() {
         </div>
       </Heading>
       <main className="brand-width">
-        <section className="flex flex-wrap items-center gap-4">
+        <section className="my-32 flex flex-wrap items-center justify-center gap-12">
           {ourTeam.members.map((member, index) => (
             <MemberCard
               key={index}

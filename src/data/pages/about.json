@@ -3,17 +3,38 @@
     "title": "who are we",
     "desc": "The African Green Growth and Development Forum (AGDF) is an eco-development friendly organization comprising of distinguished multi-disciplinary stakeholders in the private, public and CSOs sectors. AGDF Members are motivated by the need to adopt rational, robust and pragmatic approaches toward building sustainable practices and policies for enhanced socio-economic development in Africa. Established in 2018, AGDF is a legally registered Non-Profit, Professional Organization with CAC registration No.: CAC/IT/NO 135940 in Nigeria. The African Green Growth and Development Forum is committed to promoting harmonious sector-driven natural resource management that align to maintaining the technological styles for ecological integrity of nature with productive results for green livelihood. The emergence of AGDF is as a result of the prevailing environmental challenges within the local, national and global public spaces which call for holistic rationalization of human actions along common grounds to unite the much-needed human well-being and survival through conserving pristine ecosystems and environmental assets, secure decent and dignified living conditions for societies that fully promote the tenets for building a circular economy. In AGDF, we strongly believe that viable economic ventures that promote ecological functions and stability through the reduction of environmental resources deterioration provide lasting enormous sustainable livelihood opportunities to a people. The African Green Growth and Development (AGDF) operates by engaging and partnering with relevant institutions or bodies towards developing sustainable ventures that aim at eliminating poverty while increasing the impact of the green economy as a sustainability stay for the present and future generation."
   },
-  "objectives": {
+  "objective": {
     "title": "objectives",
     "desc": "We are positioned to contribute our quota to address environmental concerns within the broad scope of research, environment, conservation and development, sustainability transitions, policy advocacy and poverty reduction. Specifically, our objectives involve:",
-    "obj": [
-      "Conduct research in green economy and growth opportunities (micro and macro capital assets) in Africa.",
-      "Provide technical expertise to build the capacity of policymakers and critical stakeholders on green economy.",
-      "Promote green legislation that fosters the emergence of robust governance and institutional arrangements.",
-      "Leverage existing opportunities for green financing, technologies, and know-how to support the transition of communities and private sector players to green growth and investments.",
-      "Engage periodically with public policy, business, and academic leaders.",
-      "Encourage green entrepreneurs (small, medium, and informal businesses) in African communities.",
-      "Provide periodic score sheets utilizing the best available indicators to assess and monitor country performance by sector on progress towards green growth and development."
+    "objectives": [
+      {
+        "title": "Research Green Economy in Africa",
+        "desc": "Conduct research in green economy and growth opportunities (micro and macro capital assets) in Africa."
+      },
+      {
+        "title": "Build Policy Capacity",
+        "desc": "Provide technical expertise to build the capacity of policymakers and critical stakeholders on green economy."
+      },
+      {
+        "title": "Promote Green Legislation",
+        "desc": "Promote green legislation that fosters the emergence of robust governance and institutional arrangements."
+      },
+      {
+        "title": "Support Green Financing & Tech",
+        "desc": "Leverage existing opportunities for green financing, technologies, and know-how to support the transition of communities and private sector players to green growth and investments."
+      },
+      {
+        "title": "Engage Leaders & Stakeholders",
+        "desc": "Engage periodically with public policy, business, and academic leaders."
+      },
+      {
+        "title": "Support Green Entrepreneurs",
+        "desc": "Encourage green entrepreneurs (small, medium, and informal businesses) in African communities."
+      },
+      {
+        "title": "Track Green Growth Progress",
+        "desc": "Provide periodic score sheets utilizing the best available indicators to assess and monitor country performance by sector on progress towards green growth and development."
+      }
     ]
   },
   "priorityAreas": {

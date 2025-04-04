@@ -4,7 +4,7 @@ import {
   FlexCards,
   TeamCards,
   MemberCard,
-  NumberedCard,
+  NumberedCards,
   PrimaryButton,
   SectionHeader,
   FadeInBackground,
@@ -63,16 +63,7 @@ export default function Home() {
               title={ourMission.title}
               content={ourMission.tagline}
             />
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4">
-              {ourMission.mission.map((item) => (
-                <NumberedCard
-                  id={item.id}
-                  key={item.title}
-                  desc={item.desc}
-                  title={item.title}
-                />
-              ))}
-            </div>
+            <NumberedCards cards={ourMission.mission} />
           </div>
         </section>
 

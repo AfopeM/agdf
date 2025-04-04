@@ -19,7 +19,7 @@ export default function ProjectPage() {
 
   const projectPDF = `/projects/documents/${project.id}.pdf`;
 
-  const sentenceNodes = splitSentences(project.desc);
+  const sentenceNodes = splitSentences(project.full_desc);
   const sentences = sentenceNodes
     .filter((node) => node.type === "Sentence")
     .map((node) => node.raw.trim());
