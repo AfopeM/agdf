@@ -53,7 +53,7 @@ export default function FlexCards({ projects }: iFlexCards) {
                 onMouseEnter={() => isLgScreen && setActiveIndex(itemIndex)}
                 onMouseLeave={() => isLgScreen && setActiveIndex(null)}
                 onClick={() => !isLgScreen && handleClick(itemIndex)}
-                className={`group brand-animate relative h-32 w-full cursor-pointer overflow-hidden rounded bg-no-repeat text-center text-white lg:hover:bg-cover ${
+                className={`group brand-animate relative h-32 w-full cursor-pointer overflow-hidden rounded bg-center bg-no-repeat text-center text-white lg:hover:bg-cover ${
                   isLgScreen
                     ? activeIndex === itemIndex
                       ? "lg:flex-[2]"
