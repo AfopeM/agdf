@@ -15,11 +15,11 @@ export interface IFlexCard {
   date: string;
 }
 
-interface iFlexCards {
+interface IFlexCards {
   projects: IFlexCard[];
 }
 
-export default function FlexCards({ projects }: iFlexCards) {
+export default function FlexCards({ projects }: IFlexCards) {
   const { isLgScreen } = useResponsive();
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
@@ -58,7 +58,7 @@ export default function FlexCards({ projects }: iFlexCards) {
                 onMouseEnter={() => isLgScreen && setActiveIndex(itemIndex)}
                 onMouseLeave={() => isLgScreen && setActiveIndex(null)}
                 onClick={() => !isLgScreen && handleClick(itemIndex)}
-                className={`group brand-animate relative h-32 w-full cursor-pointer overflow-hidden rounded bg-cover bg-center text-center text-white hover:bg-cover ${
+                className={`group brand-animate relative h-32 w-full cursor-pointer overflow-hidden rounded bg-cover text-center text-white hover:bg-cover lg:bg-center ${
                   isLgScreen
                     ? isActive
                       ? "lg:flex-[2]"
@@ -75,7 +75,13 @@ export default function FlexCards({ projects }: iFlexCards) {
                 }}
               >
                 <div
-                  className={`brand-animate absolute inset-0 flex flex-col items-center justify-center bg-black/70 p-4 opacity-0 backdrop-blur transition-opacity duration-300 ${isLgScreen ? "group-hover:opacity-100" : isActive ? "opacity-100" : "pointer-events-none opacity-0"}`}
+                  className={`brand-animate absolute inset-0 flex flex-col items-center justify-center bg-black/70 p-4 opacity-0 backdrop-blur transition-opacity duration-300 ${
+                    isLgScreen
+                      ? "group-hover:opacity-100"
+                      : isActive
+                        ? "opacity-100"
+                        : "pointer-events-none opacity-0"
+                  }`}
                 >
                   <h4 className="text-lg font-black uppercase md:text-xl lg:text-2xl">
                     {project.title}
@@ -94,6 +100,11 @@ export default function FlexCards({ projects }: iFlexCards) {
               </article>
             );
           })}
+          {isLgScreen &&
+            row.length < 4 &&
+            Array.from({ length: 4 - row.length }).map((_, i) => (
+              <div key={`placeholder-${i}`} className="lg:flex-1" />
+            ))}
         </div>
       ))}
     </div>
