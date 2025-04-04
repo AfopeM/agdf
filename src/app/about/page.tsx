@@ -83,7 +83,7 @@ export default function AboutPage() {
           <FadeInBackground direction="bottom" isDark />
           <div className="brand-width relative z-10 space-y-3">
             <SectionHeader title={objective.title} content={objective.desc} />
-            <NumberedCards cards={objective.objectives} />
+            <NumberedCards cards={objective.objectives} columns="3" />
           </div>
         </section>
 

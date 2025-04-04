@@ -4,11 +4,14 @@ interface INumberedCard {
 }
 interface INumberedCards {
   cards: INumberedCard[];
+  columns: string;
 }
 
-export default function NumberedCards({ cards }: INumberedCards) {
+export default function NumberedCards({ cards, columns }: INumberedCards) {
   return (
-    <div className="grid grid-cols-1 justify-items-center gap-6 md:grid-cols-2 xl:grid-cols-3">
+    <div
+      className={`grid grid-cols-1 justify-items-center gap-6 md:grid-cols-2 xl:grid-cols-${columns}`}
+    >
       {cards.map((item, index) => (
         <article
           key={index}

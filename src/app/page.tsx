@@ -63,7 +63,7 @@ export default function Home() {
               title={ourMission.title}
               content={ourMission.tagline}
             />
-            <NumberedCards cards={ourMission.mission} />
+            <NumberedCards cards={ourMission.mission} columns="4" />
           </div>
         </section>
 
