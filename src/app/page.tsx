@@ -79,8 +79,9 @@ export default function Home() {
               {[...ourTeam.members, ...ourTeam.members].map((member, index) => (
                 <MemberCard
                   key={index}
-                  name={member}
-                  image={member.toLowerCase().replace(" ", "_")}
+                  name={member.Name}
+                  role={member.Role}
+                  image={member.Name.toLowerCase().replace(" ", "_")}
                 />
               ))}
             </TeamCards>

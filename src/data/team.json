@@ -3,13 +3,42 @@
     "title": "Our Team",
     "tagline": "Collaborating as a united team, driving innovation and sustainable solutions to create a brighter future for communities and the environment.",
     "members": [
-      "elizabeth essien",
-      "odigha odigha",
-      "enoabasi anwana",
-      "jackson akor",
-      "ekaba bisong",
-      "funmi eyeoyibo",
-      "christopher abetianbe"
+      {
+        "Name": "prof.elizabeth essien",
+        "Role": "executive secretary"
+      },
+      {
+        "Name": "funmi eyeoyibo",
+        "Role": "senior program manager"
+      },
+      {
+        "Name": "prof.joy atu",
+        "Role": "scientific officer"
+      },
+      {
+        "Name": "odigha odigha",
+        "Role": "forestry & wildlife"
+      },
+      {
+        "Name": "dr.enoabasi awana",
+        "Role": "water sector analysis"
+      },
+      {
+        "Name": "ekaba bisong",
+        "Role": "AI & big data modelling"
+      },
+      {
+        "Name": "jackson akor",
+        "Role": "circular business model"
+      },
+      {
+        "Name": "temi ajila",
+        "Role": "construction & built environment"
+      },
+      {
+        "Name": "christopher abetianbe",
+        "Role": "waste sector analysis"
+      }
     ]
   }
 }
